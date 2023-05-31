@@ -26,7 +26,7 @@ def extract_zip():
     log("starting extraction of downloaded zip")
     current_version = get_rds_version()
     with zipfile.ZipFile(pwd + "RDS_" + current_version + "_modern_minimal.zip", 'r') as zip_ref:
-        zip_ref.extractall(pwd + current_version)
+        zip_ref.extractall(pwd)
     log("Extracted successfully")
 
 def download_current_rds():
