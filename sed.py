@@ -61,7 +61,19 @@ def check_for_updates_download_extract():
         if current_version in installedversion:# ak je databaza aktualna
             log("database is up to date.")
             if os.path.exists(pwd + "RDS_" + current_version + "_modern_minimal/RDS_" + current_version + "_modern_minimal.db"):
-                log("Database Found, starting....")
+                log("Database Found, No new updates since last download, do you want to start anyway ? Y/N")
+                answer = str(input()).lower()
+                if answer == "y":
+                    log("Answer was YES. starting...")
+                elif answer == "n":
+                    log("Answer was NO, aborting.")
+                    input("Press any key to exit.")
+                    sys.exit()
+                else:
+                    log("answer not valid.")
+                    input("Press any key to exit.")
+                    sys.exit()
+
             else:
                 log("Database file was not found do you want to download it ? Y/N: ")
                 answer = str(input()).lower()
