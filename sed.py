@@ -79,7 +79,7 @@ def check_for_updates_download_extract():
                     sys.exit()
 
         else:# ak neni aktualna
-            log("database is not actual downloading new database. current version is: "+current_version)
+            log("database is not up to date downloading new database. current version is: "+current_version)
             download_current_rds()
             extract_zip()
             configfile = open(rdsversionfile, "w")
